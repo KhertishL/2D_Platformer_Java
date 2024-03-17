@@ -36,7 +36,7 @@ import java.util.Iterator;
 import java.util.Random;
 
 
-public class Game extends Application {
+public class main extends Application {
     
     private HashMap<KeyCode, Boolean> keys = new HashMap<KeyCode, Boolean>();
     private ArrayList<Node> platforms = new ArrayList<>();
@@ -298,29 +298,29 @@ public class Game extends Application {
     	uiRoot.getChildren().addAll(win,endBox);
 	}
     
-   //Function for death
-	private void die() {
-    	
-    	Rectangle gameOverMask=new Rectangle(1280, 720,Color.BLACK);
-    	
-    	VBox endBox=new VBox(50);
-		endBox.setPadding(new Insets(100, 0, 0, 480));
-    	endBox.setAlignment(Pos.CENTER);
-		
-		Label endMessage=new Label();
-		endMessage.setText(String.format("YOU DIED!"));
-		endMessage.setTextFill(Color.web("4f0202",1.0));
-		endMessage.setFont(Font.font("Algerian", FontWeight.BOLD, FontPosture.REGULAR, 50));
-		endBox.getChildren().add(endMessage);
-		
-		Button RestartButton = createButton("Retry", Color.web("361d1d",1.0), Game.class);
-        Button menuButton = createButton("Menu", Color.web("361d1d",1.0), StartScreen.class);
-        Button quitButton = createButton("Quit", Color.web("361d1d",1.0), null);
-        endBox.getChildren().addAll(RestartButton, menuButton, quitButton);
-		
-		
-    	uiRoot.getChildren().addAll(gameOverMask,endBox);
-    }
+    //Function for death
+ 	private void die() {
+     	
+     	Rectangle gameOverMask=new Rectangle(1280, 720,Color.BLACK);
+     	
+     	VBox endBox=new VBox(50);
+ 		endBox.setPadding(new Insets(100, 0, 0, 480));
+     	endBox.setAlignment(Pos.CENTER);
+ 		
+ 		Label endMessage=new Label();
+ 		endMessage.setText(String.format("YOU DIED!"));
+ 		endMessage.setTextFill(Color.web("4f0202",1.0));
+ 		endMessage.setFont(Font.font("Algerian", FontWeight.BOLD, FontPosture.REGULAR, 50));
+ 		endBox.getChildren().add(endMessage);
+ 		
+ 		Button RestartButton = createButton("Retry", Color.web("361d1d",1.0), Game.class);
+         Button menuButton = createButton("Menu", Color.web("361d1d",1.0), StartScreen.class);
+         Button quitButton = createButton("Quit", Color.web("361d1d",1.0), null);
+         endBox.getChildren().addAll(RestartButton, menuButton, quitButton);
+ 		
+ 		
+     	uiRoot.getChildren().addAll(gameOverMask,endBox);
+     }
     
     //Creation of Buttons 
 	private Button createButton(String buttonText, Color backgroundColor, Class<? extends Application> appClass) {
